@@ -1,23 +1,21 @@
-{% include base_path %}
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
+<header class="masthead">
+  <nav class="masthead__inner-wrap" aria-label="{% if page.lang == 'en' %}Main navigation{% else %}主导航{% endif %}">
+    <a class="masthead__logo" href="{{ '/' | relative_url }}" rel="home">
+      <img class="masthead__logo-img" src="{{ '/images/logo.svg' | relative_url }}" alt="" width="36" height="36">
+      <span class="masthead__logo-title">{{ site.title | escape }}</span>
+    </a>
+    {% if site.data.navigation.main.size > 0 %}
+    <ul class="masthead__links">
+      {% for link in site.data.navigation.main %}
+        {% assign link_start = link.url | slice: 0, 1 %}
+        {% if link_start == '/' %}
+          {% assign link_url = link.url | relative_url %}
+        {% else %}
+          {% assign link_url = link.url %}
+        {% endif %}
+      <li><a href="{{ link_url | escape }}"{% if link.url == page.url %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </nav>
+</header>

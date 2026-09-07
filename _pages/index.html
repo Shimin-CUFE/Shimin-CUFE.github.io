@@ -1,0 +1,14 @@
+---
+permalink: /
+title: Scripts
+description: A collection of small utility scripts and tools.
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+<p lang="en">A collection of small utility scripts and tools.</p>
+
+{% for tool in site.data.tools %}
+  {% include tool.html tool=tool %}
+{% endfor %}

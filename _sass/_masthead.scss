@@ -1,58 +1,60 @@
-/* ==========================================================================
-   MASTHEAD
-   ========================================================================== */
-
 .masthead {
-  position: fixed;
-  background: white;
-  border-bottom: 1px solid $border-color;
-  height: $masthead-height;
+  position: sticky;
   top: 0;
-  width: 100%;
-
-  -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
   z-index: 20;
-
-  &__inner-wrap {
-    @include container;
-    @include clearfix;
-    padding: 1em 1em 1em;
-    font-family: $sans-serif-narrow;
-
-    @include breakpoint($x-large) {
-      max-width: $x-large;
-    }
-
-    nav {
-      z-index: 10;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
+  background: $background-color;
+  border-bottom: 1px solid $border-color;
 }
 
-.masthead__menu {
-
-  ul {
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style-type: none;
-  }
+.masthead__inner-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  min-height: $masthead-height;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
 }
 
-.masthead__menu-item {
-  display: block;
-  list-style-type: none;
-  white-space: nowrap;
+.masthead a {
+  color: $text-color;
+  text-decoration: none;
+}
 
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-  }
+.masthead__logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.6rem;
+}
+
+.masthead__logo-img {
+  width: 36px;
+  height: 36px;
+}
+
+.masthead__logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.masthead__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.masthead__links a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.masthead__links a:hover,
+.masthead__links a[aria-current="page"] {
+  text-decoration: underline;
 }

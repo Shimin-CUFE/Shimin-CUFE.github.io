@@ -1,3 +1,5 @@
-main:
-  - title: "Scripts"
-    url: /
+# 顶栏 Logo 已链接首页。需要菜单时，将 main: [] 改为下面的列表。
+# main:
+#   - title: Sitemap
+#     url: /sitemap/
+main: []

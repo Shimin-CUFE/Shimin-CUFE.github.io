@@ -1,0 +1,30 @@
+# 工具展示数据；description 支持 Markdown。链接留空时不显示按钮。
+- id: exceltools
+  title: "ExcelTools — 表格批量处理工具箱"
+  description: |
+    **海量 Excel 文件，一秒搜遍。** 只需指定一个文件夹，输入关键词，即可在成百上千个 `.xls` / `.xlsx` 文件中精准定位到单元格。告别逐个打开查找的痛苦，搜索结果一目了然，双击直达所在文件。
+
+    **多表合并，零误差。** 不同部门交上来的报表格式五花八门？用它一键合并，自动识别表头、对齐列序、校验冲突，几十份表格瞬间汇成一张干净的总表。
+  requirements: "PyQt6 · openpyxl · xlrd · pandas"
+  repository_url:
+  download_url:
+
+- id: img2pdf
+  title: "img2pdf — 图片转 PDF 排版工具"
+  description: |
+    **拖入一叠照片，导出一本精美的 PDF 画册。** 支持 JPG、PNG、BMP、TIFF 等常见格式，自动按 A4 尺寸排版，图片自适应缩放不变形。自带实时预览面板，拖拽调整顺序，所见即所得。
+
+    **智能标注，信息不丢失。** 可自动读取照片 EXIF 拍摄日期，在每张图片下方生成文件名、日期或自定义备注标签。全中文界面，上手零门槛。
+  requirements: "Pillow（PIL）"
+  repository_url:
+  download_url:
+
+- id: blackjack
+  title: "Blackjack — 21 点纸牌游戏"
+  description: |
+    **经典赌桌玩法，完整还原。** 支持要牌、停牌、加倍、分牌、保险等所有标准操作，庄家 AI 按赌场规则自动应对。图形界面采用绿色牌毡背景、花色扑克牌面和筹码下注动画，沉浸感十足。另提供轻量命令行版，♠♥♣♦ Unicode 符号渲染，复古终端风味。
+
+    **一局不过瘾？筹码自动累计，连赢连输一目了然。** 每局结算清晰展示胜负原因 —— Blackjack、爆牌、点数比拼，规则透明不耍赖。
+  requirements: "Python 标准库 + Tkinter（无需额外安装）"
+  repository_url:
+  download_url:

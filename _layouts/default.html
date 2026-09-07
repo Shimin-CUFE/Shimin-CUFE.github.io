@@ -1,31 +1,11 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+<html lang="{{ page.lang | default: site.locale | default: 'en' }}">
   <head>
     {% include head.html %}
-    {% include head/custom.html %}
   </head>
-
   <body>
-
-    {% include browser-upgrade.html %}
+    <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}跳转到正文{% endif %}</a>
     {% include masthead.html %}
-
     {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
   </body>
 </html>

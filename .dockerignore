@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+.bundle
+_site
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+local
+vendor
+node_modules
+*.stackdump
+__pycache__

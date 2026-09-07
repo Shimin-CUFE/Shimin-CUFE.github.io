@@ -1,142 +1,55 @@
-# Site Settings
-locale                   : "en-US"
-title                    : "Scripts"
-title_separator          : "-"
-name                     : "Scripts"
-description              : "A collection of small utility scripts."
-url                      : https://Shimin-CUFE.github.io
-baseurl                  : ""
-repository               : "Shimin-CUFE/Shimin-CUFE.github.io"
+title: Scripts
+description: A collection of small utility scripts and tools.
+locale: zh-CN
+url: https://Shimin-CUFE.github.io
+baseurl: ""
+repository: Shimin-CUFE/Shimin-CUFE.github.io
 
-# Site Author — kept minimal to suppress sidebar
-author:
-  name             : ""
-  avatar           : ""
-  bio              : ""
-  location         : ""
-  email            : ""
-
-# Site Settings
-breadcrumbs              : false
-words_per_minute         : 160
-future                   : true
-read_more                : "disabled"
-comments:
-  provider               : false
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-
-# Social Sharing
-twitter:
-  username               :
-facebook:
-  username               :
-og_image                 :
-social:
-  type                   :
-  name                   :
-  links:
-
-# Analytics
-analytics:
-  provider               : false
-
-# Reading Files
 include:
-  - .htaccess
   - _pages
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
   - .github
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - CHANGELOG
-  - Capfile
-  - config
+  - .bundle
+  - .ruby-version
+  - .dockerignore
+  - .gitignore
+  - CLAUDE.md
   - Dockerfile
   - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
+  - Gemfile.lock
   - LICENSE
+  - README.md
+  - scripts
   - local
-  - log
-  - node_modules
-  - package.json*
-  - Rakefile
-  - README
-  - tmp
   - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+  - node_modules
+  - "*.stackdump"
 
-# Conversion
+encoding: utf-8
 markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
 
-# Defaults — no collections, no sidebar
 defaults:
   - scope:
       path: ""
       type: pages
     values:
       layout: single
-      author_profile: false
-      share: false
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: false
-      share: false
 
-# Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed
 
-# Outputting
-permalink: /:categories/:title/
-timezone: Etc/UTC
-
-# Plugins
+timezone: Asia/Shanghai
 plugins:
-  - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-sitemap
-  - jemoji
-
 whitelist:
-  - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-sitemap
-  - jemoji
 
-# HTML Compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+redirect_from:
+  json: false

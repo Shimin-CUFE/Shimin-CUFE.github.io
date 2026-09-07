@@ -1,0 +1,12 @@
+{% assign tool = include.tool %}
+<section class="tool" id="{{ tool.id | escape }}" aria-labelledby="{{ tool.id | escape }}-title">
+  <h2 id="{{ tool.id | escape }}-title">{{ tool.title | escape }}</h2>
+  {{ tool.description | markdownify }}
+  <p class="tool__requirements">需要环境：{{ tool.requirements | escape }}</p>
+  {% if tool.repository_url or tool.download_url %}
+  <div class="tool__links">
+    {% if tool.repository_url %}<a href="{{ tool.repository_url | escape }}">查看源码</a>{% endif %}
+    {% if tool.download_url %}<a href="{{ tool.download_url | escape }}">下载</a>{% endif %}
+  </div>
+  {% endif %}
+</section>

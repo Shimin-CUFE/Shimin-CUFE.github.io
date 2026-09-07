@@ -1,80 +1,16 @@
-# CLAUDE.md
+# Project guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is the Scripts utility showcase, a small Jekyll site derived from Academic Pages / Minimal Mistakes.
 
-## Project Overview
+Use README.md for environment setup, commands and the current directory structure.
 
-This is a Jekyll-based GitHub Pages personal academic website, built on the [Academic Pages](https://academicpages.github.io/) template (a fork of Minimal Mistakes). It is served automatically by GitHub Pages when pushed to the `master` branch.
-
-## Commands
-
-### Local Development
-
-```bash
-# Install Ruby dependencies
-bundle install
-
-# Start local dev server with live reload
-jekyll serve -l -H localhost
-# Site available at http://localhost:4000
-```
-
-### Docker
-
-```bash
-docker build -t jekyll-site .
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
-```
-
-## Architecture
-
-### Central Configuration
-
-`_config.yml` controls everything: site title/URL/description, author profile (avatar, social links, bio), collections, defaults for each page type, Markdown processing (kramdown + rouge), plugins, and archive settings. Most customizations start here.
-
-### Content Organization
-
-| Directory | Purpose |
-|-----------|---------|
-| `_pages/` | Standalone pages (about, cv, markdown guide, 404, archives) |
-| `_posts/` | Blog posts — filename format `YYYY-MM-DD-title.md` |
-| `_teaching/` | Teaching portfolio entries (collection) |
-| `_publications/` | Publications list (collection) |
-| `_talks/` | Conference talks and presentations (collection) |
-| `_portfolio/` | Portfolio items (collection) |
-| `_drafts/` | Unpublished draft posts |
-
-### Data Files (`_data/`)
-
-- `navigation.yml` — Site navigation menu structure
-- `ui-text.yml` — Localized UI strings (English)
-- `authors.yml` — Author profile data
-- `comments/` — Staticman-powered comment data (YAML files keyed by post slug)
-
-### Theme & Layout (`_layouts/`, `_includes/`, `_sass/`)
-
-- `_layouts/` — Page layouts: `default.html`, `single.html`, `archive.html`, `splash.html`, `talk.html`, `compress.html`
-- `_includes/` — Reusable partials: masthead, footer, sidebar, author profile, analytics, comments, SEO meta tags, social sharing, pagination, breadcrumbs
-- `_sass/` — SCSS stylesheets (compiled to `assets/css/main.scss`)
-- `assets/` — Static assets (CSS, JS, images)
-
-### Content Generators (`markdown_generator/`)
-
-Python scripts and Jupyter notebooks to generate markdown files for publications and talks from TSV data:
-
-- `publications.py` / `.ipynb` — Generate `_publications/` entries from `publications.tsv`
-- `talks.py` / `.ipynb` — Generate `_talks/` entries from `talks.tsv`
-- `PubsFromBib.ipynb` / `pubsFromBib.py` — Generate publications from BibTeX files
-- `OrcidToBib.ipynb` — Fetch ORCID publications and convert to BibTeX
-
-### Plugins
-
-jekyll-feed, jekyll-gist, jekyll-paginate, jekyll-sitemap, jemoji — all whitelisted for GitHub Pages compatibility.
-
-## Customizing the Site
-
-1. Edit `_config.yml` — update `title`, `name`, `description`, `url`, `repository`, and `author` fields with real information
-2. Replace `images/profile.png` with an actual avatar
-3. Edit `_data/navigation.yml` to update the site menu
-4. Add/modify content files in `_pages/`, `_posts/`, and collection directories
-5. Upload downloadable files (PDFs, etc.) to the `files/` directory
+- Tool content belongs in `_data/tools.yml`; `_pages/index.html` and `_includes/tool.html` render it.
+- Keep the home page, 404 page, HTML/XML sitemaps, and the two legacy about redirects working.
+- Layouts are `single.html` and `default.html`. There are no blog collections, author sidebar, comments, analytics, content generators or frontend package build.
+- Preserve the masthead logo and the navigation configuration.
+- Use Jekyll URL filters for internal links and assets so subpath hosting works.
+- Keep the five Sass partials independent of third-party grid and icon libraries.
+- Do not edit generated `_site/` output. Development tools and caches belong in ignored directories.
+- Commit Gemfile.lock when dependencies change. Match the Ruby/Bundler versions documented in README.md.
+- After changing templates or assets, run the production build and `python scripts/check_site.py` for both the empty baseurl and `/preview`, as documented in README.md.
+- Preserve the original MIT license notice.
