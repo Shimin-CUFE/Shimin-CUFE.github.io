@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '~> 3.3.0'
 
 # Match the Jekyll series used by GitHub Pages without installing unused themes.
-gem 'jekyll', '~> 3.10.0'
+gem 'jekyll', '~> 4.4.1'
 gem 'kramdown-parser-gfm', '~> 1.1'
 
 # Ruby 3.4 moved base64 out of the default gems; jekyll 3.10's dependency
