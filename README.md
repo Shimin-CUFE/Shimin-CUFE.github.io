@@ -14,7 +14,8 @@ The Python packages listed on the website belong to these tools. They are not de
 
 ## Development
 
-Use Ruby **3.4.10** (also recorded in `.ruby-version`) and Bundler **2.6.9**.
+Use Ruby **3.3.12** (also recorded in `.ruby-version`) and Bundler **2.6.9**.
+Ruby 3.3 keeps `bigdecimal` available as a default gem for Liquid 4 without an additional Gemfile dependency.
 On Windows, RubyInstaller with its MSYS2 Devkit is needed to compile native gem extensions.
 Python **3.10+** is only needed for the generated-site checks; no Python packages or Node.js packages are required.
 

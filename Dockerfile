@@ -1,4 +1,4 @@
-FROM ruby:3.4.10-slim-bookworm
+FROM ruby:3.3.12-slim-bookworm
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \

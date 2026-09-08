@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 3.4.0'
+ruby '~> 3.3.0'
 
 # Match the Jekyll series used by GitHub Pages without installing unused themes.
 gem 'jekyll', '~> 3.10.0'
