@@ -8,7 +8,7 @@ gem 'kramdown-parser-gfm', '~> 1.1'
 
 # Ruby 3.4 moved base64 out of the default gems; jekyll 3.10's dependency
 # tree requires it at runtime without declaring it (fixed upstream in 4.4.0).
-gem 'base64', '~> 0.2'
+gem 'base64', '~> 0.3'
 
 group :jekyll_plugins do
   gem 'jekyll-redirect-from', '~> 0.16.0'
