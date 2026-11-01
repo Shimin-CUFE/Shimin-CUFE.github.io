@@ -11,7 +11,7 @@ gem 'kramdown-parser-gfm', '~> 1.1'
 gem 'base64', '~> 0.2'
 
 group :jekyll_plugins do
-  gem 'jekyll-redirect-from', '~> 0.16.0'
+  gem 'jekyll-redirect-from', '~> 0.17.0'
   gem 'jekyll-sitemap', '~> 1.4.0'
 end
 
